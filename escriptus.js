@@ -116,5 +116,6 @@ if (acabou == true) {
     location.reload()
 }
     document.addEventListener('keydown', jump);
+    document.addEventListener('touchstart', jump)
 
 
