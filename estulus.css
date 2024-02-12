@@ -1,0 +1,110 @@
+body {
+    background: rgb(50, 35, 95);
+    font: 15pt Arial;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+.telas {
+    top: 30px;
+    width: 80%;
+    height: 500px;
+    border: 5px solid #c3c1c1;    
+    background-color: rgb(15, 106, 106);
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    font-style: italic;
+}
+
+.cactus {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0px;
+    width: 200px;
+    animation: cactusanima 2s infinite linear;
+}
+
+.coin {
+    bottom: 200px;
+    width: 80px;
+    right: -80px;
+    position: absolute;
+}
+
+.grzrun {
+    position: absolute;
+    width: 240px;
+    left: 200px;
+    bottom: -120px;
+}
+
+.vem {
+    animation: cactusanima 1.5s  linear;
+}
+
+.cactusvem {
+    animation: cactusanima linear;
+}
+
+.jump {
+    animation: jump 800ms  ease-out;
+}
+
+.anjo {
+    animation: ajo 3s ease forwards;
+}
+
+@keyframes cactusanima {
+    from{
+        right: -200px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: -119px;
+    }
+
+
+    30% { 
+        bottom: 100px;
+    }
+
+    50% {
+        bottom: 100px;
+    }
+
+    100% {
+        bottom: -120px;
+    }
+}
+
+@keyframes ajo {
+    from {
+        bottom: -68px;
+    }
+    to {
+        bottom: 200px;
+    }
+}
+
+
+
+footer {
+    position: relative;
+
+    color: antiquewhite;
+    text-align: center;
+    font-style: italic;
+    
+
+}
+
