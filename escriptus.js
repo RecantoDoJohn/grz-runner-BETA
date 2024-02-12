@@ -3,6 +3,9 @@ const cactu = document.querySelector('.cactus');
 const placar = document.querySelector('.pontua')
 const chico = document.querySelector('.coin');
 const moedaponto = document.querySelector('.moedapont');
+const jumpaudio = new Audio('./sns/Jump.wav')
+const faudio = new Audio('./sns/F.wav')
+const coinaudio = new Audio('./sns/coin.wav')
 
 var ponto = 0
 var moedadisp = 0 
@@ -33,6 +36,7 @@ const jump = () => {
 
     gazy.classList.add('jump');
     gazy.src = './spr/grzjump.png'
+    jumpaudio.play() 
     }
 }
 
@@ -59,6 +63,7 @@ const game = setInterval(() => {
     
     // verificar caso coleta de moeda
     if (posicaocoin <= 280 && posicaocoin > 180 && posicaogzy >  -20) {
+        coinaudio.play()
         moedadisp++
         moedaponto.innerHTML = `${moedadisp} moedas`
         chico.classList.remove('vem');
@@ -72,6 +77,7 @@ const game = setInterval(() => {
     if (posicaocactu <= 240 && posicaocactu > 90 && posicaogzy < 10) {
         cactu.style.animation = 'none'
         cactu.style.left = `${posicaocactu}px`
+        faudio.play()
         acabou = true
         clearInterval(jump)
         clearInterval(game)
