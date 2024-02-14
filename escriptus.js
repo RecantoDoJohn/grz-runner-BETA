@@ -7,10 +7,12 @@ const jumpaudio = new Audio('./sns/Jump.wav')
 const faudio = new Audio('./sns/F.wav')
 const coinaudio = new Audio('./sns/coin.wav')
 
+
 var ponto = 0
 var moedadisp = 0 
 var acabou = false
 
+//cactu.classList.add('cactusvem');
 
 
 const moeda = setInterval(() => {
@@ -21,7 +23,7 @@ const moeda = setInterval(() => {
     if (sorte > 10) {
         chico.classList.add('vem')
     }
-
+ 
     /*if (sorte > 0 && sorte <= 5) {
         cactu.scr = './spr/cactu1.png'
         cactu.animation
@@ -40,20 +42,21 @@ const jump = () => {
     }
 }
 
-// loop do jogo
+// loop do jogo animation: cactusanima 2s infinite linear;   
 const game = setInterval(() => {
     
     const posicaocactu = cactu.offsetLeft;
     const posicaocoin = chico.offsetLeft;
     const posicaogzy = +window.getComputedStyle(gazy).bottom.replace('px', '');
     const animaciongrz = window.getComputedStyle(gazy)
-    const animaciocac = document.querySelector('.cactusvem');
 
 
     ponto++
     placar.innerHTML = `${ponto} Pontos`
 
-    console.log(posicaocactu)
+    
+
+    // console.log(posicaocactu)
 
     if (posicaogzy == -120 && animaciongrz.animationName !== 'none') {
         gazy.src  = './spr/grzrun.gif'
@@ -86,31 +89,35 @@ const game = setInterval(() => {
         gazy.classList.add('anjo');
     }
 
-        // verificar se cacto saiu da tela BETA
-       /* if (posicaocactu < -10) {
-            var sortec = Math.floor(Math.random() * 20)
-            animaciocac.style.animationDuration = '3s'
-            cactu.classList.remove('cactusvem');
+    // caso o cactu tiver animaçao
+    if (cactu.classList.contains('cactusvem')) {    
+            // verificar se cacto saiu da tela 
+            if (posicaocactu <= -150) {
+                cactu.classList.remove('cactusvem');
+
+            }
+        } else { // trocar o sprt e adicionar animaçao dnv
+            var sortec = Math.floor(Math.random() * 20) 
             console.log(sortec, "soret")
-    
             if (sortec >= 0 && sortec <= 5) {
-                cactu.scr = './spr/cactu2.png'
-                animaciocac.style.animationDuration = '3s'
+                cactu.src = './spr/cactu1.png'
                 cactu.classList.add('cactusvem');
+
             } else if (sortec > 5 && sortec <= 10) {
-                cactu.scr = './spr/cactu2.png'
-                animaciocac.style.animationDuration = '1s'
+                cactu.src = './spr/cactu2.png'
                 cactu.classList.add('cactusvem');
             } else if (sortec > 10 && sortec <= 15) {
-                cactu.scr = './spr/cactu2.png'
-                animaciocac.style.animationDuration = '2s'
+                cactu.src = './spr/cactulf.png'
                 cactu.classList.add('cactusvem');
+
             } else if (sortec > 15 && sortec <= 20) {
-                cactu.scr = './spr/cactu2.png'
-                animaciocac.style.animationDuration = '1.5s'
+                cactu.src = './spr/cactuspy.png'
                 cactu.classList.add('cactusvem');
+
             }
-        } */
+            
+        }
+
 
      }, 10)
 
