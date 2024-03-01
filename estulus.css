@@ -19,6 +19,8 @@ body {
     position: relative;
     overflow: hidden;
     font-style: italic;
+    border-radius: 15px;
+    box-shadow: #000000 10px 10px 0px;
 }
 
 .cactus {
@@ -101,10 +103,10 @@ body {
 
 footer {
     position: relative;
-
     color: antiquewhite;
     text-align: center;
     font-style: italic;
+    margin: 80px;
     
 
 }
